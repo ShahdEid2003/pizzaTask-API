@@ -1,7 +1,7 @@
 async function pizaa() {
-    const data = await fetch(`https://forkify-api.herokuapp.com/api/search?q=pizza`);
-    const pizza= await data.json();
-    const recipes=pizza.recipes;
+    const response = await fetch(`https://forkify-api.herokuapp.com/api/search?q=pizza`);
+    const data = await response.json();
+    const recipes = data.recipes;
     const result = recipes.map(function (recipe) {
         return `<div class="pizaa-section">
                     <h2 class="title">${recipe.title}</h2>
